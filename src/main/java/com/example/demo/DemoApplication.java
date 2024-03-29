@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-public class DemoApplication { // Renamed main class
+public class DemoApplication { 
 
 	private static final Logger logger = LoggerFactory.getLogger(DemoApplication.class);
 
@@ -20,13 +20,12 @@ public class DemoApplication { // Renamed main class
 }
 
 @RestController
-@RequestMapping("/dic_student_name")
 class DicController {
 
 	@Value("${fullname:Bass}")
 	private String fullname;
 
-	@GetMapping
+	@GetMapping("/dic_student_name")
 	String getFullName() {
 		return "Work done by " + this.fullname + ".";
 	}
